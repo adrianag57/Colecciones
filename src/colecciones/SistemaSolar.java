@@ -12,7 +12,7 @@ public class SistemaSolar {
 	}
 	
 	public void addPlaneta(Planeta planeta) 
-			throws Exception {
+			throws PlanetaRepetidoException, SistemaSolarLlenoException {
 		
 		if (!(planetas.size()<=3)) {
 			
@@ -27,8 +27,23 @@ public class SistemaSolar {
 	else 	{
 			
 		String texto = "Sistema Solar completo > " + planetas.size();
-		SistemaSolarLLenoException error = new SistemaSolarLLenoException(texto);
+		SistemaSolarLlenoException error = new SistemaSolarLlenoException(texto);
 		throw error;
 	}
+	
+	else	{
+		
+		if (!masa > 100.00) {
+			
+			planetas.add(planeta);
+		}
+		else	{
+			
+			PlanetaImposibleException error = new PlanetaImposibleException("Planeta imposible");
+			throw error;
+		}
+	}
+	
+
 
 }

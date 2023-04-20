@@ -19,17 +19,37 @@ public class Start {
 
 		try {
 			sistemaSolar.add(tierra);
-		} catch (PlanetaRepetidoException e) {
+		} catch (PlanetaRepetidoException e1) {
 
-			e.printStackTrace();
+			e1.printStackTrace();
+		}
+		catch (SistemaSolarLlenoException e2) {
+			
+			e2.printStackTrace();
 		}
 
+		
+		
+		
 		try {
-			sistemaSolar.add(mercurio);
+			sistemaSolar.addPlaneta(tierra);
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		
+		
+		try {
+			sistemaSolar.addPlaneta(mercurio);
 		} catch (PlanetaRepetidoException e) {
 
 			e.printStackTrace();
 		}
+		catch (SistemaSolarLlenoException e) {
+
+			e.printStackTrace();
+		}
+		
 
 		try {
 			sistemaSolar.add(venus);

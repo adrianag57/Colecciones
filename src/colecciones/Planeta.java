@@ -6,11 +6,9 @@ public class Planeta {
 	private double distancia;
 	private double masa;
 
-	public Planeta(String nombre, double distancia, double masa) {
+	public Planeta(String nombre, double distancia, double masa) throws PlanetaImposibleException {
 
-		this.nombre = nombre;
-		this.masa = masa;
-		this.distancia = distancia;
+			this.nombre = nombre;
 	}
 
 	public String getNombre() {
@@ -25,7 +23,14 @@ public class Planeta {
 		return distancia;
 	}
 
-	public void setDistancia(double distancia) {
+	public void setDistancia(double distancia) throws PlanetaImposibleException {
+
+		if (distancia < 1000) {
+
+			PlanetaImposibleException pie = new PlanetaImposibleException("Planeta imposible");
+			throw pie;
+		}
+
 		this.distancia = distancia;
 	}
 
@@ -33,7 +38,14 @@ public class Planeta {
 		return masa;
 	}
 
-	public void setMasa(double masa) {
+	public void setMasa(double masa) throws PlanetaImposibleException {
+		
+		if (masa < 1000) {
+
+			PlanetaImposibleException pie = new PlanetaImposibleException("Planeta imposible");
+			throw pie;
+		}
+		
 		this.masa = masa;
 	}
 

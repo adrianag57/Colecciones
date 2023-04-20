@@ -1,13 +1,13 @@
 package colecciones;
 
-public class SistemaSolarLLenoException extends Exception {
+public class PlanetaImposibleException extends Exception {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public SistemaSolarLLenoException(String texto) {
+	public PlanetaImposibleException(String texto) {
 		
 		super(texto);
 	}
