@@ -1,9 +1,5 @@
 package colecciones;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 import errores.PlanetaImposibleException;
 import errores.PlanetaRepetidoException;
 import errores.SistemaSolarLlenoException;
@@ -18,7 +14,6 @@ public class Start {
 		Planeta mercurio = new Planeta("Mercurio");
 		Planeta venus = new Planeta("Venus");
 		Planeta marte = new Planeta("Marte");
-		Planeta jupiter = new Planeta("Jupiter");
 		
 		
 		try {
@@ -38,11 +33,6 @@ public class Start {
 		}
 		try {
 			marte.setDistacia(34000);
-		} catch (PlanetaImposibleException e2) {
-			e2.printStackTrace();
-		}
-		try {
-			jupiter.setDistacia(3400000);
 		} catch (PlanetaImposibleException e2) {
 			e2.printStackTrace();
 		}
@@ -82,19 +72,20 @@ public class Start {
 			sistemaSolar.addPlaneta(marte);
 		} catch (PlanetaRepetidoException e) {
 			e.printStackTrace();
-		}	
-		
-		try {
-			sistemaSolar.addPlaneta(jupiter);
-		} catch (PlanetaRepetidoException e) {
-			e.printStackTrace();
-		}	
+		}
 		
 		tierra.setNombre("Tierrina");
+		
+//		System.out.println(CalculosPlanetarios.distanciasPlanetarias(sistemaSolar.getPlanetas()));
+		System.out.print(CalculosPlanetarios.DistanciaMaxima(sistemaSolar.getPlanetas()));
+		
+//		System.out.println(sistemaSolar.mediaPlanetaria());
+		
+//		sistemaSolar.recorrer();
 
-		System.out.println(sistemaSolar);
-		sistemaSolar.ordenar();
-		System.out.println(sistemaSolar);
+//		System.out.println(sistemaSolar);
+//		sistemaSolar.ordenar();
+//		System.out.println(sistemaSolar);
 
 	}
 
