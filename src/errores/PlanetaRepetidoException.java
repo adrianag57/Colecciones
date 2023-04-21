@@ -1,7 +1,9 @@
-package colecciones;
+package errores;
 
-public class PlanetaRepetidoException extends java.lang.Exception {
+public class PlanetaRepetidoException extends Exception {
 	
+
+
 	/**
 	 * 
 	 */

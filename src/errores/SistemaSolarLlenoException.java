@@ -1,7 +1,7 @@
-package colecciones;
+package errores;
 
 public class SistemaSolarLlenoException extends Exception {
-	
+
 	/**
 	 * 
 	 */
@@ -11,5 +11,5 @@ public class SistemaSolarLlenoException extends Exception {
 		
 		super(texto);
 	}
-
+	
 }
